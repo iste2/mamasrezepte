@@ -1,0 +1,16 @@
+<h3 class="mb-3">{{ recipe.title }}</h3>
+
+<p class="mb-3">{{ recipe.description }}</p>
+
+<p-galleria
+  *ngIf="recipe.imagePaths"
+  [value]="recipe.imagePaths"
+  [circular]="true"
+  [showItemNavigators]="true"
+  [containerStyle]="{'max-width': '400px'}"
+  [showThumbnails]="false">
+  <ng-template pTemplate="item" let-item>
+    <img [src]="item" alt="Image" style="width: 100%; display: block;" />
+  </ng-template>
+
+</p-galleria>
