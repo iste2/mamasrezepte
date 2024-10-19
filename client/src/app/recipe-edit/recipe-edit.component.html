@@ -1,12 +1,12 @@
 <form>
   <div class="flex flex-column">
     <label for="title" class="mb-2">Titel</label>
-    <input pInputText type="text" id="title" class="mb-3" />
+    <input pInputText type="text" name="title" id="title" class="mb-3" [(ngModel)]="recipe.title" />
 
     <label for="description" class="mb-2">Beschreibung</label>
-    <textarea pInputTextarea id="description" autoResize="true" class="mb-3"></textarea>
+    <textarea pInputTextarea name="description" [(ngModel)]="recipe.description" id="description" autoResize="true" class="mb-3"></textarea>
 
-    <p-button type="submit">Speichern</p-button>
+    <button pButton type="submit" (click)="submitForm()">Speichern</button>
   </div>
 </form>
 

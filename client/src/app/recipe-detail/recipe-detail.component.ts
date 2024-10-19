@@ -12,7 +12,7 @@ export class RecipeDetailComponent implements OnInit {
   id = "";
 
   constructor(private route: ActivatedRoute) {
-    this.recipe = { title: "Apfelstrudel", description: "Ein leckerer Apfelstrudel", imagePaths: [ "https://picsum.photos/200", "https://picsum.photos/300", "https://picsum.photos/250" ] };
+    this.recipe = { title: "Apfelstrudel", description: "Ein leckerer Apfelstrudel" };
   }
 
   ngOnInit(): void {

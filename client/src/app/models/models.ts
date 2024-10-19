@@ -1,5 +1,4 @@
-export interface Recipe {
+export type Recipe = {
   title: string;
   description: string;
-  imagePaths: string[];
 }

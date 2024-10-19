@@ -11,21 +11,9 @@ export class RecipeListComponent {
 
   constructor() {
     this.recipes = [
-      { title: "Apfelstrudel", description: "Ein leckerer Apfelstrudel", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Kaiserschmarrn", description: "Ein leckerer Kaiserschmarrn", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Sachertorte", description: "Eine leckere Sachertorte", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Wiener Schnitzel", description: "Ein leckeres Wiener Schnitzel", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Gulasch", description: "Ein leckeres Gulasch", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Käsespätzle", description: "Leckere Käsespätzle", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Maultaschen", description: "Leckere Maultaschen", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Schwarzwälder Kirschtorte", description: "Leckere Schwarzwälder Kirschtorte", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Rinderrouladen", description: "Leckere Rinderrouladen", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Kartoffelsalat", description: "Leckerer Kartoffelsalat", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Maultaschen", description: "Leckere Maultaschen", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Schwarzwälder Kirschtorte", description: "Leckere Schwarzwälder Kirschtorte", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Rinderrouladen", description: "Leckere Rinderrouladen", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Kartoffelsalat", description: "Leckerer Kartoffelsalat", imagePaths: [ "https://picsum.photos/200/300" ] },
-      { title: "Maultaschen", description: "Leckere Maultaschen", imagePaths: [ "https://picsum.photos/200/300" ] },
+      { title: "Apfelstrudel", description: "Ein leckerer Apfelstrudel" },
+      { title: "Käsekuchen", description: "Ein leckerer Käsekuchen" },
+      { title: "Schokoladenkuchen", description: "Ein leckerer Schokoladenkuchen" },
     ];
   }
 

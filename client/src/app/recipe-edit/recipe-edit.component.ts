@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Recipe} from '../models/models';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './recipe-edit.component.scss'
 })
 export class RecipeEditComponent {
+
+  recipe: Recipe = {
+    title: '',
+    description: ''
+  };
+
+  submitForm() {
+    console.log(this.recipe);
+  }
 
 }
