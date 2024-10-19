@@ -11,12 +11,15 @@ import {MenubarModule} from 'primeng/menubar';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import {DataViewModule} from 'primeng/dataview';
 import {ImageModule} from 'primeng/image';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
+import {GalleriaModule} from 'primeng/galleria';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppbarComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import {ImageModule} from 'primeng/image';
     InputTextModule,
     MenubarModule,
     DataViewModule,
-    ImageModule
+    ImageModule,
+    GalleriaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
