@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppbarComponent } from './appbar/appbar.component';
 import {ToolbarModule} from 'primeng/toolbar';
-import {Button} from 'primeng/button';
+import {Button, ButtonDirective} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {MenubarModule} from 'primeng/menubar';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
@@ -13,13 +13,16 @@ import {DataViewModule} from 'primeng/dataview';
 import {ImageModule} from 'primeng/image';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import {GalleriaModule} from 'primeng/galleria';
+import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppbarComponent,
     RecipeListComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import {GalleriaModule} from 'primeng/galleria';
     MenubarModule,
     DataViewModule,
     ImageModule,
-    GalleriaModule
+    GalleriaModule,
+    InputTextareaModule,
+    ButtonDirective
   ],
   providers: [],
   bootstrap: [AppComponent]
