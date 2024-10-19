@@ -9,6 +9,8 @@ import {Button} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {MenubarModule} from 'primeng/menubar';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import {DataViewModule} from 'primeng/dataview';
+import {ImageModule} from 'primeng/image';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
     ToolbarModule,
     Button,
     InputTextModule,
-    MenubarModule
+    MenubarModule,
+    DataViewModule,
+    ImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
