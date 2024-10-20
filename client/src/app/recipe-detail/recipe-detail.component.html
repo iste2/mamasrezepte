@@ -2,7 +2,13 @@
   <div class="flex flex-column">
     <h3 class="mb-3">{{ recipe.title }}</h3>
 
-    {{ recipe.description }}
+    <div class="mb-3">
+      <p-chip [label]="tag" *ngFor="let tag of recipe.tags" class="mr-1"></p-chip>
+    </div>
+
+    <div class="mb-3">
+      {{ recipe.description }}
+    </div>
 
     <p-button icon="pi pi-pencil" (onClick)="editRecipe()"></p-button>
   </div>
