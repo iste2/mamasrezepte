@@ -1,6 +1,6 @@
 import {Models} from 'appwrite';
 
-export type Recipe = {
+export interface Recipe {
   title: string;
   description: string;
   tags: string[];

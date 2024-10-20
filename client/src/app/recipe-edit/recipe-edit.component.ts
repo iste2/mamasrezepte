@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Recipe} from '../models/models';
 import {RecipeService} from '../services/recipe.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './recipe-edit.component.html',
   styleUrl: './recipe-edit.component.scss'
 })
-export class RecipeEditComponent {
+export class RecipeEditComponent implements OnInit {
 
   recipe: Recipe;
   id = "";

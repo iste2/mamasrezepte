@@ -9,10 +9,6 @@ export class RecipeService {
 
   recipes: RecipeDocument[] = [];
 
-  constructor() {
-
-  }
-
   async updateRecipes() {
     this.recipes = await this.getRecipes();
   }
@@ -26,7 +22,7 @@ export class RecipeService {
   }
 
   async upsertRecipe(recipe: Recipe, id?: string): Promise<RecipeDocument> {
-    var recipeConstructed: Recipe = {
+    const recipeConstructed: Recipe = {
       title: recipe.title,
       description: recipe.description,
       tags: recipe.tags,

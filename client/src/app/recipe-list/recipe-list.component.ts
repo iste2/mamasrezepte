@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Recipe, RecipeDocument} from '../models/models';
+import {RecipeDocument} from '../models/models';
 import {RecipeService} from '../services/recipe.service';
 import {Router} from '@angular/router';
 
