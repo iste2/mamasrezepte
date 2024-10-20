@@ -3,6 +3,7 @@ import {RecipeDocument} from '../models/models';
 import {RecipeService} from '../services/recipe.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TagService} from '../services/tag.service';
+import {ImageService} from '../services/image.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -18,7 +19,8 @@ export class RecipeListComponent implements OnInit {
     protected recipeService: RecipeService,
     protected router: Router,
     private route: ActivatedRoute,
-    protected tagService: TagService) {
+    protected tagService: TagService,
+    protected imageService: ImageService) {
 
   }
 

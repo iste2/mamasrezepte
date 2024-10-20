@@ -14,6 +14,11 @@
       <tr>
         <td>{{ recipe.title }}</td>
         <td>
+          @if(recipe.images.length > 0) {
+            <img src="{{ imageService.getImagePath(recipe.images[0]) }}" alt="Bild" width="100" height="50" style="object-fit: cover;" />
+          }
+        </td>
+        <td>
           <p-chip [label]="tag" *ngFor="let tag of recipe.tags" class="mr-1"></p-chip>
         </td>
         <td class="flex justify-content-end">
