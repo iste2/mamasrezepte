@@ -1,6 +1,6 @@
 <p-menubar>
   <ng-template pTemplate="start">
-    <h1 class="text-2xl">Mamas Rezepte</h1>
+    <h1 (click)="goToHome()" class="text-2xl">Mamas Rezepte</h1>
   </ng-template>
   <ng-template pTemplate="end">
     <input type="text" pInputText placeholder="Suchen" class="w-8rem sm:w-auto mr-2" />

@@ -15,4 +15,8 @@ export class AppbarComponent {
     this.router.navigateByUrl('/new-recipe');
   }
 
+  goToHome() {
+    this.router.navigateByUrl('/');
+  }
+
 }
