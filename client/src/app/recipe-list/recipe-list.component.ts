@@ -24,7 +24,7 @@ export class RecipeListComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.readQueryParams();
-    await this.recipeService.updateRecipes(this.search);
+    await this.recipeService.updateRecipes(this.search, this.activeTags);
     await this.tagService.updateTags();
   }
 
@@ -35,7 +35,7 @@ export class RecipeListComponent implements OnInit {
   readQueryParams(): void {
     this.route.queryParams.subscribe(async params => {
       this.search = params['search'];
-      await this.recipeService.updateRecipes(this.search);
+      await this.recipeService.updateRecipes(this.search, this.activeTags);
     });
   }
 
