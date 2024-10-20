@@ -2,6 +2,7 @@
   <ng-template pTemplate="header">
     <tr>
       <th>Rezept</th>
+      <th>Tags</th>
       <th>Aktionen</th>
     </tr>
   </ng-template>
@@ -9,7 +10,10 @@
     <tr>
       <td>{{ recipe.title }}</td>
       <td>
-        <p-button (onClick)="goToRecipe(recipe)" icon="pi pi-arrow-righ" />
+        <p-chip [label]="tag" *ngFor="let tag of recipe.tags" class="mr-1"></p-chip>
+      </td>
+      <td>
+        <p-button (onClick)="goToRecipe(recipe)" icon="pi pi-arrow-right" />
       </td>
     </tr>
   </ng-template>

@@ -18,6 +18,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import {ChipsModule} from 'primeng/chips';
+import {ChipModule} from 'primeng/chip';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {ChipsModule} from 'primeng/chips';
     ButtonDirective,
     FormsModule,
     TableModule,
-    ChipsModule
+    ChipsModule,
+    ChipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
