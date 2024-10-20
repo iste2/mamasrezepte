@@ -16,7 +16,7 @@
         <td>
           <p-chip [label]="tag" *ngFor="let tag of recipe.tags" class="mr-1"></p-chip>
         </td>
-        <td>
+        <td class="flex justify-content-end">
           <p-button (onClick)="goToRecipe(recipe)" icon="pi pi-arrow-right" />
         </td>
       </tr>
