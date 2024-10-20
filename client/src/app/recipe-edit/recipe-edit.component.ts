@@ -13,7 +13,7 @@ export class RecipeEditComponent {
   recipe: Recipe;
   id = "";
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService) {
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router) {
     this.recipe = {
       title: "",
       description: "",
@@ -29,6 +29,7 @@ export class RecipeEditComponent {
 
   async saveRecipe() {
     await this.recipeService.upsertRecipe(this.recipe as Recipe, this.id);
+    this.router.navigateByUrl(`/edit-recipe/${this.id}`);
   }
 
 }
