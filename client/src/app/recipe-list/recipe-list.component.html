@@ -1,11 +1,4 @@
 <p-table [value]="recipeService.recipes">
-  <ng-template pTemplate="header">
-    <tr>
-      <th>Rezept</th>
-      <th>Tags</th>
-      <th>Aktionen</th>
-    </tr>
-  </ng-template>
   <ng-template pTemplate="body" let-recipe>
     <tr>
       <td>{{ recipe.title }}</td>
