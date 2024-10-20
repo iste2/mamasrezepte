@@ -124,5 +124,26 @@
             "encryption": true,
             "antivirus": true
         }
+    ],
+    "functions": [
+        {
+            "$id": "671550f700305b4de36e",
+            "name": "pdf-export",
+            "runtime": "node-20.0",
+            "execute": [
+                "any"
+            ],
+            "events": [],
+            "scopes": [
+                "users.read"
+            ],
+            "schedule": "",
+            "timeout": 15,
+            "enabled": true,
+            "logging": true,
+            "entrypoint": "src/main.js",
+            "commands": "npm install",
+            "path": "functions/pdf-export"
+        }
     ]
 }
