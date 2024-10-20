@@ -23,6 +23,10 @@ import {EditorModule} from 'primeng/editor';
 import {ToastModule} from 'primeng/toast';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TagModule} from 'primeng/tag';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {FileUploadModule} from 'primeng/fileupload';
+import {HttpClientModule} from '@angular/common/http';
+import {NgOptimizedImage} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -52,7 +56,11 @@ import {TagModule} from 'primeng/tag';
     ToastModule,
     BrowserModule,
     BrowserAnimationsModule,
-    TagModule
+    TagModule,
+    ConfirmDialogModule,
+    FileUploadModule,
+    HttpClientModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

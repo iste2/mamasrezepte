@@ -1,4 +1,4 @@
-<form>
+<form class="mb-3">
   <div class="flex flex-column">
     <label for="title" class="mb-2">Titel</label>
     <input pInputText type="text" name="title" id="title" class="mb-3" [(ngModel)]="recipe.title" />
@@ -9,8 +9,52 @@
     <label for="description" class="mb-2">Beschreibung</label>
     <p-editor id="description" name="description" [(ngModel)]="recipe.description" class="mb-3"></p-editor>
 
+    <label for="images-table" class="mb-2">Bilder bearbeiten</label>
+    <p-table [value]="recipe.images" id="images-table" class="mb-3">
+      <ng-template pTemplate="header">
+        <tr>
+          <th></th>
+          <th>Aktionen</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-image>
+        <tr>
+          <td>
+            <img src="{{this.getImagePreviewPath(image)}}" alt="Bild" width="100" height="100" />
+          </td>
+          <td>
+            <p-button type="button" icon="pi pi-trash" *ngIf="!imagesToBeDeleted.includes(image)" (click)="markImageForDeletion(image)"></p-button>
+            <p-button type="button" icon="pi pi-refresh" *ngIf="imagesToBeDeleted.includes(image)" (click)="markImageForDeletion(image)"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <p-fileUpload
+      id="images"
+      mode="basic"
+      chooseLabel="Bilder hochladen"
+      chooseIcon="pi pi-upload"
+      name="images[]"
+      class="mb-3"
+      [multiple]="true"
+      [auto]="true"
+      accept="image/*"
+      invalidFileSizeMessageSummary="Datei zu groß"
+      invalidFileSizeMessageDetail="Maximale Dateigröße: 5MB"
+      maxFileSize="5000000"
+      (onSelect)="uploadImages($event)" />
+
     <p-toast />
     <button pButton type="submit" (click)="saveRecipe()">Speichern</button>
+  </div>
+</form>
+
+<form *ngIf="id">
+  <div class="flex flex-column">
+    <p-confirmDialog />
+    <p-toast />
+    <button pButton type="submit" severity="danger" (click)="deleteRecipe($event)">Rezept löschen</button>
   </div>
 </form>
 

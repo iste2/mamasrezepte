@@ -10,7 +10,7 @@ export class RecipeService {
 
   recipes: RecipeDocument[] = [];
 
-  async updateRecipes(search: string = "", tags: string[] = []) {
+  async updateRecipes(search = "", tags: string[] = []) {
     this.recipes = await this.getRecipesSearched(search, tags);
   }
 
@@ -19,7 +19,7 @@ export class RecipeService {
   }
 
   async getRecipesSearched(search: string, tags: string[]): Promise<RecipeDocument[]> {
-    var queries = [];
+    const queries = [];
     if(search) queries.push(Query.search("title", search));
     if(tags.length) queries.push(Query.contains("tags", tags));
 
@@ -35,8 +35,13 @@ export class RecipeService {
       title: recipe.title,
       description: recipe.description,
       tags: recipe.tags,
+      images: recipe.images
     };
     if (id) return await db.updateDocument(dbId, recipeCollectionId, id, recipeConstructed);
     else return await db.createDocument(dbId, recipeCollectionId, "unique()", recipeConstructed);
+  }
+
+  async deleteRecipe(id: string): Promise<void> {
+    await db.deleteDocument(dbId, recipeCollectionId, id);
   }
 }
