@@ -1,4 +1,4 @@
-<p-dataView #dv [value]="recipes" [rows]="10" [paginator]="true">
+<p-dataView #dv [value]="recipeService.recipes" [rows]="10" [paginator]="true">
   <ng-template pTemplate="list" let-recipes>
     <div class="grid grid-nogutter">
       <div *ngFor="let recipe of recipes" class="col-12">

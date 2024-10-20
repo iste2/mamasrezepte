@@ -12,7 +12,7 @@ export class RecipeDetailComponent implements OnInit {
   id = "";
 
   constructor(private route: ActivatedRoute) {
-    this.recipe = { title: "Apfelstrudel", description: "Ein leckerer Apfelstrudel" };
+
   }
 
   ngOnInit(): void {

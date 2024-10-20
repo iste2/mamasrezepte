@@ -8,13 +8,11 @@ import {Recipe} from '../models/models';
 })
 export class RecipeEditComponent {
 
-  recipe: Recipe = {
-    title: '',
-    description: ''
-  };
+  title = "";
+  description = "";
 
   submitForm() {
-    console.log(this.recipe);
+
   }
 
 }
