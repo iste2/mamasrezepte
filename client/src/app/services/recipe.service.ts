@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {RecipeDocument} from '../models/models';
+import {Recipe, RecipeDocument} from '../models/models';
 import {db, dbId, recipeCollectionId} from '../appwrite';
 
 @Injectable({
@@ -23,5 +23,14 @@ export class RecipeService {
 
   async getRecipes() {
     return (await db.listDocuments(dbId, recipeCollectionId)).documents as RecipeDocument[];
+  }
+
+  async upsertRecipe(recipe: Recipe, id?: string): Promise<RecipeDocument> {
+    var recipeConstructed: Recipe = {
+      title: recipe.title,
+      description: recipe.description
+    };
+    if (id) return await db.updateDocument(dbId, recipeCollectionId, id, recipeConstructed);
+    else return await db.createDocument(dbId, recipeCollectionId, "unique()", recipeConstructed);
   }
 }

@@ -20,15 +20,15 @@ export class RecipeEditComponent {
     }
   }
 
-  submitForm() {
-
-  }
-
   async ngOnInit(): Promise<void> {
     this.id = this.route.snapshot.paramMap.get('id') ?? "";
     if (this.id) {
-      this.recipe = await this.recipeService.getRecipe(this.id);
+      this.recipe = await this.recipeService.getRecipe(this.id) as Recipe;
     }
+  }
+
+  async saveRecipe() {
+    await this.recipeService.upsertRecipe(this.recipe as Recipe, this.id);
   }
 
 }

@@ -1,9 +1,11 @@
 @if(recipe) {
-  <h3 class="mb-3">{{ recipe.title }}</h3>
+  <div class="flex flex-column">
+    <h3 class="mb-3">{{ recipe.title }}</h3>
 
-  {{ recipe.description }}
+    {{ recipe.description }}
 
-  <p-button icon="pi pi-pencil" (onClick)="editRecipe()"></p-button>
+    <p-button icon="pi pi-pencil" (onClick)="editRecipe()"></p-button>
+  </div>
 }
 
 
