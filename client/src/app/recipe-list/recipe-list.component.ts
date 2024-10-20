@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RecipeDocument} from '../models/models';
 import {RecipeService} from '../services/recipe.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,16 +10,29 @@ import {Router} from '@angular/router';
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor(protected recipeService: RecipeService, protected router: Router) {
+  search = "";
+  constructor(
+    protected recipeService: RecipeService,
+    protected router: Router,
+    private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.recipeService.updateRecipes();
+    this.readQueryParams();
+    this.recipeService.updateRecipes(this.search);
+
   }
 
   goToRecipe(recipe: RecipeDocument): void {
     this.router.navigateByUrl(`/recipes/${recipe.$id}`);
+  }
+
+  readQueryParams(): void {
+    this.route.queryParams.subscribe(params => {
+      this.search = params['search'];
+      this.recipeService.updateRecipes(this.search);
+    });
   }
 
 }

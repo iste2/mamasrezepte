@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class AppbarComponent {
 
+  searchQuery = "";
+
   constructor(private router: Router) {
   }
 
@@ -17,6 +19,15 @@ export class AppbarComponent {
 
   goToHome() {
     this.router.navigateByUrl('/');
+  }
+
+  search() {
+    const searchQuery = this.searchQuery;
+    this.searchQuery = "";
+    if(searchQuery)
+      this.router.navigateByUrl("?search=" + searchQuery);
+    else
+      this.router.navigateByUrl("/");
   }
 
 }

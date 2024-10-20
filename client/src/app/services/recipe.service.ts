@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Recipe, RecipeDocument} from '../models/models';
 import {db, dbId, recipeCollectionId} from '../appwrite';
+import {Query} from 'appwrite';
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +10,23 @@ export class RecipeService {
 
   recipes: RecipeDocument[] = [];
 
-  async updateRecipes() {
-    this.recipes = await this.getRecipes();
+  async updateRecipes(search?: string) {
+    if (search) {
+      this.recipes = await this.getRecipesSearched(search);
+    } else{
+      this.recipes = await this.getRecipes();
+    }
+
   }
 
   async getRecipe(id: string): Promise<RecipeDocument> {
     return await db.getDocument(dbId, recipeCollectionId, id) as RecipeDocument;
+  }
+
+  async getRecipesSearched(search: string): Promise<RecipeDocument[]> {
+    return (await db.listDocuments(dbId, recipeCollectionId, [
+      Query.search("title", search)
+    ])).documents as RecipeDocument[];
   }
 
   async getRecipes() {
