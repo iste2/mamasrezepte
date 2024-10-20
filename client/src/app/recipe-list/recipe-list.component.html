@@ -1,7 +1,14 @@
 <div class="flex flex-column">
 
+  <!-- search title -->
   <h3 *ngIf="search" class="mb-3">Ergebnisse für "{{ this.search }}"</h3>
 
+  <!-- tags -->
+  <div class="flex flex-wrap mb-3">
+    <p-chip [label]="tag" *ngFor="let tag of tagService.tags" class="mr-1"></p-chip>
+  </div>
+
+  <!-- table -->
   <p-table [value]="recipeService.recipes">
     <ng-template pTemplate="body" let-recipe>
       <tr>

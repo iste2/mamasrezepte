@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RecipeDocument} from '../models/models';
 import {RecipeService} from '../services/recipe.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {TagService} from '../services/tag.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -14,24 +15,25 @@ export class RecipeListComponent implements OnInit {
   constructor(
     protected recipeService: RecipeService,
     protected router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    protected tagService: TagService) {
 
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.readQueryParams();
-    this.recipeService.updateRecipes(this.search);
-
+    await this.recipeService.updateRecipes(this.search);
+    await this.tagService.updateTags();
   }
 
-  goToRecipe(recipe: RecipeDocument): void {
-    this.router.navigateByUrl(`/recipes/${recipe.$id}`);
+  async goToRecipe(recipe: RecipeDocument): Promise<void> {
+    await this.router.navigateByUrl(`/recipes/${recipe.$id}`);
   }
 
   readQueryParams(): void {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe(async params => {
       this.search = params['search'];
-      this.recipeService.updateRecipes(this.search);
+      await this.recipeService.updateRecipes(this.search);
     });
   }
 
