@@ -39,12 +39,13 @@ export class RecipeListComponent implements OnInit {
     });
   }
 
-  addOrRemoveTag(tag: string): void {
+  async addOrRemoveTag(tag: string): Promise<void> {
     if (this.activeTags.includes(tag)) {
       this.activeTags = this.activeTags.filter(t => t !== tag);
     } else {
       this.activeTags.push(tag);
     }
+    await this.recipeService.updateRecipes(this.search, this.activeTags);
   }
 
 }

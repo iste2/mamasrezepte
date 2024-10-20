@@ -10,27 +10,24 @@ export class RecipeService {
 
   recipes: RecipeDocument[] = [];
 
-  async updateRecipes(search?: string) {
-    if (search) {
-      this.recipes = await this.getRecipesSearched(search);
-    } else{
-      this.recipes = await this.getRecipes();
-    }
-
+  async updateRecipes(search: string = "", tags: string[] = []) {
+    this.recipes = await this.getRecipesSearched(search, tags);
   }
 
   async getRecipe(id: string): Promise<RecipeDocument> {
     return await db.getDocument(dbId, recipeCollectionId, id) as RecipeDocument;
   }
 
-  async getRecipesSearched(search: string): Promise<RecipeDocument[]> {
-    return (await db.listDocuments(dbId, recipeCollectionId, [
-      Query.search("title", search)
-    ])).documents as RecipeDocument[];
-  }
+  async getRecipesSearched(search: string, tags: string[]): Promise<RecipeDocument[]> {
+    var queries = [];
+    if(search) queries.push(Query.search("title", search));
+    if(tags.length) queries.push(Query.contains("tags", tags));
 
-  async getRecipes() {
-    return (await db.listDocuments(dbId, recipeCollectionId)).documents as RecipeDocument[];
+    return (await db.listDocuments(
+      dbId,
+      recipeCollectionId,
+      queries))
+      .documents as RecipeDocument[];
   }
 
   async upsertRecipe(recipe: Recipe, id?: string): Promise<RecipeDocument> {
