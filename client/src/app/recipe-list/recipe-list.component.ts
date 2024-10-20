@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Recipe} from '../models/models';
+import {Recipe, RecipeDocument} from '../models/models';
 import {RecipeService} from '../services/recipe.service';
 import {Router} from '@angular/router';
 
@@ -18,7 +18,7 @@ export class RecipeListComponent implements OnInit {
     this.recipeService.updateRecipes();
   }
 
-  goToRecipe(recipe: Recipe): void {
+  goToRecipe(recipe: RecipeDocument): void {
     this.router.navigateByUrl(`/recipes/${recipe.$id}`);
   }
 
