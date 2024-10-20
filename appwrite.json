@@ -73,6 +73,14 @@
                     "array": false,
                     "size": 2000,
                     "default": null
+                },
+                {
+                    "key": "tags",
+                    "type": "string",
+                    "required": false,
+                    "array": true,
+                    "size": 1000,
+                    "default": null
                 }
             ],
             "indexes": []

@@ -3,6 +3,9 @@
     <label for="title" class="mb-2">Titel</label>
     <input pInputText type="text" name="title" id="title" class="mb-3" [(ngModel)]="recipe.title" />
 
+    <label for="tags" class="mb-2">Tags</label>
+    <p-chips id="tags" name="tags" class="mb-3" [(ngModel)]="recipe.tags" />
+
     <label for="description" class="mb-2">Beschreibung</label>
     <textarea pInputTextarea name="description" [(ngModel)]="recipe.description" id="description" autoResize="true" class="mb-3"></textarea>
 

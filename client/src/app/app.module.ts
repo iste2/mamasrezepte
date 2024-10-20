@@ -17,6 +17,7 @@ import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
+import {ChipsModule} from 'primeng/chips';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {TableModule} from 'primeng/table';
     InputTextareaModule,
     ButtonDirective,
     FormsModule,
-    TableModule
+    TableModule,
+    ChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

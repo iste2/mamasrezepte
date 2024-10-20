@@ -28,7 +28,8 @@ export class RecipeService {
   async upsertRecipe(recipe: Recipe, id?: string): Promise<RecipeDocument> {
     var recipeConstructed: Recipe = {
       title: recipe.title,
-      description: recipe.description
+      description: recipe.description,
+      tags: recipe.tags,
     };
     if (id) return await db.updateDocument(dbId, recipeCollectionId, id, recipeConstructed);
     else return await db.createDocument(dbId, recipeCollectionId, "unique()", recipeConstructed);

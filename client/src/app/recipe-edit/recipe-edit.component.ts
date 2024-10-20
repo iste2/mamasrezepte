@@ -17,6 +17,7 @@ export class RecipeEditComponent {
     this.recipe = {
       title: "",
       description: "",
+      tags: [],
     }
   }
 
