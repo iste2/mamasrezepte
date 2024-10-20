@@ -39,7 +39,7 @@ export class RecipeEditComponent implements OnInit {
       await this.recipeService.upsertRecipe(this.recipe as Recipe, this.id);
       this.messageService.add({severity:'success', summary:'Rezept gespeichert'});
       await this.router.navigateByUrl(`/edit-recipe/${this.id}`);
-    } catch (e) {
+    } catch {
       this.messageService.add({severity:'error', summary:'Fehler beim Speichern'});
     }
   }
