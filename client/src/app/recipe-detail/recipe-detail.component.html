@@ -1,6 +1,11 @@
-<h3 class="mb-3">{{ recipe.title }}</h3>
+@if(recipe) {
+  <h3 class="mb-3">{{ recipe.title }}</h3>
 
-<p class="mb-3">{{ recipe.description }}</p>
+  {{ recipe.description }}
+
+  <p-button icon="pi pi-pencil" (onClick)="editRecipe()"></p-button>
+}
+
 
 <!--<p-galleria-->
 <!--  *ngIf="recipe.imagePaths"-->
