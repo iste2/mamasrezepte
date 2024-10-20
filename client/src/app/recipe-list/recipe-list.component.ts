@@ -12,6 +12,8 @@ import {TagService} from '../services/tag.service';
 export class RecipeListComponent implements OnInit {
 
   search = "";
+  activeTags: string[] = [];
+
   constructor(
     protected recipeService: RecipeService,
     protected router: Router,
@@ -35,6 +37,14 @@ export class RecipeListComponent implements OnInit {
       this.search = params['search'];
       await this.recipeService.updateRecipes(this.search);
     });
+  }
+
+  addOrRemoveTag(tag: string): void {
+    if (this.activeTags.includes(tag)) {
+      this.activeTags = this.activeTags.filter(t => t !== tag);
+    } else {
+      this.activeTags.push(tag);
+    }
   }
 
 }
