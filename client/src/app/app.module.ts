@@ -16,6 +16,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FormsModule} from '@angular/forms';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {FormsModule} from '@angular/forms';
     GalleriaModule,
     InputTextareaModule,
     ButtonDirective,
-    FormsModule
+    FormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
