@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import {ChipsModule} from 'primeng/chips';
 import {ChipModule} from 'primeng/chip';
+import {EditorModule} from 'primeng/editor';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {ChipModule} from 'primeng/chip';
     FormsModule,
     TableModule,
     ChipsModule,
-    ChipModule
+    ChipModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
