@@ -8,20 +8,21 @@
 
     <div class="mb-3" [innerHTML]="recipe.description"></div>
 
+    <p-galleria
+      *ngIf="recipe.images"
+      [value]="recipe.images"
+      [circular]="true"
+      class="mb-3"
+      [showItemNavigators]="true"
+      [containerStyle]="{'max-width': '400px'}"
+      [showThumbnails]="false">
+      <ng-template pTemplate="item" let-item>
+        <img src="{{imagePaths[item]}}" alt="Image" style="width: 100%; display: block; height: 300px; object-fit: cover;" />
+      </ng-template>
+    </p-galleria>
+
     <p-button icon="pi pi-pencil" (onClick)="editRecipe()"></p-button>
   </div>
 }
 
 
-<!--<p-galleria-->
-<!--  *ngIf="recipe.imagePaths"-->
-<!--  [value]="recipe.imagePaths"-->
-<!--  [circular]="true"-->
-<!--  [showItemNavigators]="true"-->
-<!--  [containerStyle]="{'max-width': '400px'}"-->
-<!--  [showThumbnails]="false">-->
-<!--  <ng-template pTemplate="item" let-item>-->
-<!--    <img [src]="item" alt="Image" style="width: 100%; display: block;" />-->
-<!--  </ng-template>-->
-
-<!--</p-galleria>-->

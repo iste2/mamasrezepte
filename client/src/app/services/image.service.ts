@@ -24,4 +24,10 @@ export class ImageService {
     return result;
   }
 
+  getImagePath(imageId: string): string {
+    const result = storage.getFileView(imagesBucketId, imageId);
+    console.log(result);
+    return result;
+  }
+
 }
