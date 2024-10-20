@@ -20,6 +20,8 @@ import {TableModule} from 'primeng/table';
 import {ChipsModule} from 'primeng/chips';
 import {ChipModule} from 'primeng/chip';
 import {EditorModule} from 'primeng/editor';
+import {ToastModule} from 'primeng/toast';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,10 @@ import {EditorModule} from 'primeng/editor';
     TableModule,
     ChipsModule,
     ChipModule,
-    EditorModule
+    EditorModule,
+    ToastModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

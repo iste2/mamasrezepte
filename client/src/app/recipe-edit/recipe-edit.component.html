@@ -9,6 +9,7 @@
     <label for="description" class="mb-2">Beschreibung</label>
     <p-editor id="description" name="description" [(ngModel)]="recipe.description" class="mb-3"></p-editor>
 
+    <p-toast />
     <button pButton type="submit" (click)="saveRecipe()">Speichern</button>
   </div>
 </form>
