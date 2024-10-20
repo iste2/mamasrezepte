@@ -47,7 +47,12 @@
     "collections": [
         {
             "$id": "6713b2ba003558ba63cd",
-            "$permissions": [],
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
             "databaseId": "6713b2b100274e5943c6",
             "name": "recipes",
             "enabled": true,
